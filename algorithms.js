@@ -143,7 +143,20 @@ const makeRomanNumerals = (num) => {
 	return romNumArray.reverse().join('')
 }
 
-// console.log(makeRomanNumerals(479))
+console.log(makeRomanNumerals(479))
+
+// const makeRomanNumerals2 = (num) => {
+// 	const romanNumeralRef = [
+// 		{I: 1},
+// 		{V: 5},
+// 		{X: 10},
+// 		{L: 50},
+// 		{C: 100},
+// 		{D: 500},
+// 		{M: 1000}
+// 	]
+//
+// }
 
 // 20305
 const makeFizzBuzz = () => {
@@ -160,7 +173,7 @@ const makeFizzBuzz = () => {
 	}
 }
 
-// makeFizzBuzz()
+makeFizzBuzz()
 
 // 20306
 const a = (num1, num2) => {
@@ -171,4 +184,4 @@ const b = (func, num1, num2, num3) => {
 	return a(num1, num2) - num3
 }
 
-// console.log(b(a, 10, 2, 3))
+console.log(b(a, 10, 2, 3))
