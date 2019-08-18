@@ -200,6 +200,9 @@ let makeChange2 = (amount, arr) => {
 			amount -= e
 		}
 	})
+	if (amount = .01) {
+		total.push(0.01)
+	}
 	return total
 }
 
