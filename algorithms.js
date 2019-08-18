@@ -36,6 +36,10 @@ console.log(filterPalindromes(names))
 
 // 20304
 const makeRomanNumerals = (num) => {
+	if (num >= 4000) {
+		return 'input number must be less than 4000'
+	}
+
 	let romNumArray = []
 	let indDigits = num.toString().split('').reverse()
 	console.log(indDigits)
@@ -145,18 +149,52 @@ const makeRomanNumerals = (num) => {
 
 console.log(makeRomanNumerals(479))
 
-// const makeRomanNumerals2 = (num) => {
-// 	const romanNumeralRef = [
-// 		{I: 1},
-// 		{V: 5},
-// 		{X: 10},
-// 		{L: 50},
-// 		{C: 100},
-// 		{D: 500},
-// 		{M: 1000}
-// 	]
-//
-// }
+
+// 20304 (second solution)
+const makeRomanNumerals2 = (num) => {
+	if (num > 3999) {
+		return 'Input number must be less than 4000'
+	}
+	
+	const romanNumeralRef = [
+		{M: 1000},
+		{CM: 900},
+		{DCCC: 800},
+		{DCC: 700},
+		{DC: 600},
+		{D: 500},
+		{CD: 400},
+		{C: 100},
+		{XC: 90},
+		{LXXX: 80},
+		{LXX: 70},
+		{LX: 60},
+		{L: 50},
+		{XL: 40},
+		{X: 10},
+		{IX: 9},
+		{VIII: 8},
+		{VII: 7},
+		{VI: 6},
+		{V: 5},
+		{IV: 4},
+		{I: 1}
+	]
+
+	let numeralArr = []
+
+	romanNumeralRef.forEach(obj => {
+		let key = Object.keys(obj)
+		let value = Object.values(obj)
+		while (num >= value) {
+			numeralArr.push(key)
+			num -= value
+		}
+	})
+	return numeralArr.join('')
+}
+
+console.log(makeRomanNumerals2(3790));
 
 // 20305
 const makeFizzBuzz = () => {
