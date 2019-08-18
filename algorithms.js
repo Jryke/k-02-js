@@ -42,7 +42,6 @@ const makeRomanNumerals = (num) => {
 
 	let romNumArray = []
 	let indDigits = num.toString().split('').reverse()
-	console.log(indDigits)
 	switch(indDigits[0]) {
 		case '1':
 			romNumArray.push('I');
@@ -147,7 +146,7 @@ const makeRomanNumerals = (num) => {
 	return romNumArray.reverse().join('')
 }
 
-console.log(makeRomanNumerals(479))
+console.log(makeRomanNumerals(4792))
 
 
 // 20304 (second solution)
@@ -155,7 +154,7 @@ const makeRomanNumerals2 = (num) => {
 	if (num > 3999) {
 		return 'Input number must be less than 4000'
 	}
-	
+
 	const romanNumeralRef = [
 		{M: 1000},
 		{CM: 900},
@@ -194,7 +193,7 @@ const makeRomanNumerals2 = (num) => {
 	return numeralArr.join('')
 }
 
-console.log(makeRomanNumerals2(3790));
+console.log(makeRomanNumerals2(4790));
 
 // 20305
 const makeFizzBuzz = () => {
