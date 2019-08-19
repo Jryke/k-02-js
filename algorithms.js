@@ -146,7 +146,7 @@ const makeRomanNumerals = (num) => {
 	return romNumArray.reverse().join('')
 }
 
-console.log(makeRomanNumerals(4792))
+console.log(makeRomanNumerals(479))
 
 
 // 20304 (second solution)
@@ -180,20 +180,20 @@ const makeRomanNumerals2 = (num) => {
 		{I: 1}
 	]
 
-	let numeralArr = []
+	let romanNumeral = ''
 
 	romanNumeralRef.forEach(obj => {
 		let key = Object.keys(obj)
 		let value = Object.values(obj)
 		while (num >= value) {
-			numeralArr.push(key)
+			romanNumeral += key
 			num -= value
 		}
 	})
-	return numeralArr.join('')
+	return romanNumeral
 }
 
-console.log(makeRomanNumerals2(4790));
+console.log(makeRomanNumerals2(3790));
 
 // 20305
 const makeFizzBuzz = () => {
