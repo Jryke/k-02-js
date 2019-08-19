@@ -27,9 +27,7 @@ console.log(convertPrices(prices))
 
 // 20303
 const filterPalindromes = (arr) => {
-	return arr.filter(str => {
-		return str == str.split('').reverse().join('')
-	})
+	return arr.filter(str => str == str.split('').reverse().join(''))
 }
 
 console.log(filterPalindromes(names))
