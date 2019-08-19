@@ -195,14 +195,11 @@ console.log(makeChange(27.58))
 let makeChange2 = (amount, arr) => {
 	let total = []
 	arr.forEach(e => {
-		while (amount >= e) {
+		while (amount.toFixed(2) >= e) {
 			total.push(e)
 			amount -= e
 		}
 	})
-	if (amount = .01) {
-		total.push(0.01)
-	}
 	return total
 }
 
