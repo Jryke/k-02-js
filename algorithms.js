@@ -1,6 +1,6 @@
 let phrase = 'JavaScript is the best'
 let prices = ['$22', '€99', '$75', '£80', '€43', '$22']
-let names = ['anna', 'john', 'bob', 'frank']
+let names = ['anna', 'Anna', 'john', 'bob', 'frank']
 
 // 20301
 const reverseWords = (str) => {
@@ -27,7 +27,7 @@ console.log(convertPrices(prices))
 
 // 20303
 const filterPalindromes = (arr) => {
-	return arr.filter(str => str == str.split('').reverse().join(''))
+	return arr.filter(str => str.toLowerCase() == str.toLowerCase().split('').reverse().join(''))
 }
 
 console.log(filterPalindromes(names))
