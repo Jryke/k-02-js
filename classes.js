@@ -33,3 +33,41 @@ let makeEmployees = (arr1, arr2) => {
 }
 
 console.log(makeEmployees(names, jobs))
+
+// 020503
+let belts = ['white', 'yellow', 'orange', 'green', 'blue', 'brown', 'black']
+
+let Karateka = class {
+	constructor(name) {
+		this.name = name
+		this.belt = belts[0]
+	}
+	increaseRank(index) {
+		this.belt = belts[index]
+	}
+}
+
+let me = new Karateka('Jesse')
+
+let fight = (fighter) => {
+	let seconds = 0
+	let makeFightInterval = setInterval(() => {
+		seconds++
+		let score = Math.round(Math.random() * 10)
+
+		if (score > 8 && fighter.belt != 'black') {
+			let index = belts.indexOf(fighter.belt)
+			index++
+			fighter.increaseRank(index)
+		}
+
+		console.log(`Score: ${score}`)
+		console.log(fighter)
+
+		if (seconds == 20) {
+			clearInterval(makeFightInterval)
+		}
+	} , 1000)
+}
+
+fight(me)
