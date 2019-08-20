@@ -71,3 +71,77 @@ let fight = (fighter) => {
 }
 
 fight(me)
+
+// 020504
+let foodNames = ['apples', 'bananas', 'bread', 'cookies', 'broccoli', 'onions']
+let prices = [20, 12, 24, 53, 32, 15]
+let discounts = [0, 0, 10, 25, 0, 5]
+
+let Product = class {
+	constructor(name, price) {
+		this.name = name
+		this.price = price
+	}
+	applyDiscount(discount) {
+		this.price = this.price - (this.price * (discount / 100))
+	}
+}
+
+let productArr = []
+foodNames.forEach((food, i) => {
+	let obj = new Product(food, prices[i])
+	obj.applyDiscount(discounts[i])
+	productArr.push(obj)
+})
+
+let Receipt = class {
+	constructor(products) {
+		this.products = products
+	}
+	calcTotal(products) {
+		let total = 0
+		this.products.forEach((product) => {
+			total += product.price
+		})
+		return total
+	}
+}
+
+const getReceipt = (names, prices, discounts) => {
+	let newProductArr = names.map((name, i) => {
+		return new Product(name, prices[i])
+	})
+
+	newProductArr.forEach((product, i) => {
+		product.applyDiscount(discounts[i])
+	})
+
+	let newReceipt = new Receipt(productArr)
+	console.log(newReceipt)
+	console.log(newReceipt.calcTotal())
+}
+
+// getReceipt(foodNames, prices, discounts)
+
+const getReceiptFormatted = (names, prices, discounts) => {
+	let newProductArr = names.map((name, i) => {
+		return new Product(name, prices[i])
+	})
+
+	let newReceipt = new Receipt(productArr)
+	console.log('----------------------')
+
+	productArr.forEach(product => {
+		let formattedName = product.name
+		while (formattedName.length < 10) {
+			formattedName += ' '
+		}
+		console.log(`| ${formattedName} | $${product.price.toFixed(2)} |`)
+	})
+
+	console.log('----------------------')
+	console.log(`| Total      | $${newReceipt.calcTotal()} |`)
+	console.log('----------------------')
+}
+
+getReceiptFormatted(foodNames, prices, discounts)
