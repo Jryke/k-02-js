@@ -31,3 +31,30 @@ getUp().then(response => {
 		})
 	})
 })
+
+// 020603
+const makeCoffee = () => {
+	return new Promise((res, rej) => {
+		return setTimeout(() => res('coffee'), 10 * 1000)
+	})
+}
+
+const makeEggs = () => {
+	return new Promise((res, rej) => {
+		return setTimeout(() => res('eggs'), 5 * 1000)
+	})
+}
+
+const makeToast = () => {
+	return new Promise((res, rej) => {
+		return setTimeout(() => res('toast'), 6 * 1000)
+	})
+}
+
+const makeBacon = () => {
+	return new Promise((res, rej) => {
+		return setTimeout(() => res('bacon'), 8 * 1000)
+	})
+}
+
+Promise.all([makeCoffee(), makeEggs(), makeToast(), makeBacon()]).then(responses => console.log(`Breakfast is ready: ${responses}`))
