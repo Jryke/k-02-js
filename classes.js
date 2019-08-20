@@ -129,7 +129,7 @@ const getReceiptFormatted = (names, prices, discounts) => {
 	})
 
 	let newReceipt = new Receipt(productArr)
-	console.log('----------------------')
+	console.log('-----------------------')
 
 	productArr.forEach(product => {
 		let formattedName = product.name
@@ -139,9 +139,9 @@ const getReceiptFormatted = (names, prices, discounts) => {
 		console.log(`| ${formattedName} | $${product.price.toFixed(2)} |`)
 	})
 
-	console.log('----------------------')
+	console.log('-----------------------')
 	console.log(`| Total      | $${newReceipt.calcTotal()} |`)
-	console.log('----------------------')
+	console.log('-----------------------')
 }
 
 getReceiptFormatted(foodNames, prices, discounts)
