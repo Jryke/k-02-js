@@ -32,7 +32,13 @@ let makeEmployees = (arr1, arr2) => {
 	return employeesArr
 }
 
-console.log(makeEmployees(names, jobs))
+let makeEmployeesMap = (arr1, arr2) => {
+	return arr1.map((name, i) => {
+		return new Employee(name, arr2[i])
+	})
+}
+
+console.log(makeEmployeesMap(names, jobs))
 
 // 020503
 let belts = ['white', 'yellow', 'orange', 'green', 'blue', 'brown', 'black']
