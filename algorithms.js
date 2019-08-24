@@ -1,6 +1,6 @@
 let phrase = 'JavaScript is the best'
 let prices = ['$22', '€99', '$75', '£80', '€43', '$22']
-let names = ['anna', 'Anna', 'john', 'bob', 'frank']
+let names = ['anna', 'john', 'bob', 'frank']
 
 // 20301
 const reverseWords = (str) => {
@@ -18,7 +18,7 @@ const convertPrices = (arr) => {
 	return arr.map(price => {
 		return {
 			currency: price[0],
-			value: price.slice(1)
+			value: Number(price.slice(1))
 		}
 	})
 }
