@@ -63,9 +63,7 @@ let fight = (fighter) => {
 		seconds++
 		let score = Math.round(Math.random() * 10)
 
-		if (score > 8 && fighter.belt != 'black') {
-			fighter.increaseRank()
-		}
+		score > 8 && fighter.belt != 'black' ? fighter.increaseRank(): null
 
 		console.log(`Score: ${score}`)
 		console.log(fighter)
