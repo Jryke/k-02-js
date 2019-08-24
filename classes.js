@@ -48,7 +48,9 @@ let Karateka = class {
 		this.name = name
 		this.belt = belts[0]
 	}
-	increaseRank(index) {
+	increaseRank() {
+		let index = belts.indexOf(this.belt)
+		index++
 		this.belt = belts[index]
 	}
 }
@@ -62,9 +64,7 @@ let fight = (fighter) => {
 		let score = Math.round(Math.random() * 10)
 
 		if (score > 8 && fighter.belt != 'black') {
-			let index = belts.indexOf(fighter.belt)
-			index++
-			fighter.increaseRank(index)
+			fighter.increaseRank()
 		}
 
 		console.log(`Score: ${score}`)
